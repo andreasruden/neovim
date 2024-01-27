@@ -7,7 +7,7 @@ Originally based on https://github.com/nvim-lua/kickstart.nvim
 ### Installation
 
 Requirements:
-* NeoVim version >= 0.8
+* NeoVim version >= 0.9
 * C & C++ Compiler, e.g. gcc, clang.
 * Git
 * ripgrep

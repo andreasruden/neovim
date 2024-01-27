@@ -12,6 +12,11 @@ Requirements:
 * Git
 * ripgrep
 
+Soft Requirements (for selected LSP servers, see lua/lsp-setup.lua to disable):
+* unzip
+* golang
+* python3
+
 How To:
 ```sh
 mkdir -p ~/.config/nvim

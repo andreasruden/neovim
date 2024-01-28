@@ -14,6 +14,10 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Center display on Ctrl-u, Ctrl-d
+vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz')
+vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz')
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

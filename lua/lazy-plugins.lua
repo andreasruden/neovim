@@ -13,6 +13,24 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+  
+  -- Harpoon for easy navigation between some files via pinning
+  {
+    'ThePrimeagen/harpoon',
+	dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+	config = function()
+	  local mark = require('harpoon.mark')
+	  local ui = require('harpoon.ui')
+      vim.keymap.set('n', '<leader>m', mark.add_file, { desc = 'Mark file with Harpoon' })
+	  vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu, { desc = 'Open Harpoon Quick Menu' })
+	  vim.keymap.set('n', '<C-h>', function() ui.nav_file(1) end, { desc = 'Switch to first harpooned file' })
+	  vim.keymap.set('n', '<C-j>', function() ui.nav_file(2) end, { desc = 'Switch to second harpooned file' })
+	  vim.keymap.set('n', '<C-k>', function() ui.nav_file(3) end, { desc = 'Switch to third harpooned file' })
+	  vim.keymap.set('n', '<C-l>', function() ui.nav_file(4) end, { desc = 'Switch to fourth harpooned file' })
+    end,
+  },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
